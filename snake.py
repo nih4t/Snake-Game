@@ -9,6 +9,7 @@ class Snake:
     def __init__(self):
         self.snake_body = []  # list of body segments
         self.create_snake()
+        self.head = self.snake_body[0]
 
     def create_snake(self):
         """Initialize the snake with a default number of segments."""
@@ -23,6 +24,18 @@ class Snake:
         segment.penup()
         segment.setposition(position)
         self.snake_body.append(segment)
+
+    def up(self):
+        self.head.setheading(90)
+
+    def down(self):
+        self.head.setheading(270)
+
+    def left(self):
+        self.head.setheading(180)
+
+    def right(self):
+        self.head.setheading(0)
 
     def move(self):
         """Move the snake forward by shifting each segment to the position of the previous one."""
