@@ -4,6 +4,10 @@ MOVE_DISTANCE = 20
 SEGMENT_SIZE = 20
 DEFAULT_SIZE = 20  # pixels
 INITIAL_LENGTH = 3  # Initial number of segments
+UP = 90
+DOWN = 270
+LEFT = 180
+RIGHT = 0
 
 class Snake:
     def __init__(self):
@@ -26,16 +30,20 @@ class Snake:
         self.snake_body.append(segment)
 
     def up(self):
-        self.head.setheading(90)
+        if self.head.heading() != DOWN:
+            self.head.setheading(UP)
 
     def down(self):
-        self.head.setheading(270)
+        if self.head.heading() != UP:
+            self.head.setheading(DOWN)
 
     def left(self):
-        self.head.setheading(180)
+        if self.head.heading() != RIGHT:
+            self.head.setheading(LEFT)
 
     def right(self):
-        self.head.setheading(0)
+        if self.head.heading() != LEFT:
+            self.head.setheading(RIGHT)
 
     def move(self):
         """Move the snake forward by shifting each segment to the position of the previous one."""
