@@ -1,7 +1,6 @@
 # Snake Game
 
-The classic Snake game, built with Python's Turtle graphics module. Navigate the snake to eat food, grow longer, and avoid collisions!
-
+The classic Snake game, built with Python's Turtle graphics module.
 ## Requirements
 
 - Python 3.x
