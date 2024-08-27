@@ -28,6 +28,13 @@ class Snake:
         segment.setposition(position)
         self.snake_body.append(segment)
 
+    def clear(self):
+        for seg in self.snake_body:
+            seg.goto(1000, 1000)
+        self.snake_body.clear()
+        self.create_snake()
+        self.head = self.snake_body[0]
+
     def extend(self):
         """Extend the snake by adding a new segment at the position of the last segment."""
         self.add_segment(self.snake_body[-1].position())
